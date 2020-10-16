@@ -137,8 +137,9 @@ AWS_STORAGE_BUCKET_NAME = 'personalweb-bucket'
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
 AWS_LOCATION= 'static'
-
+ 
 STATIC_URL = 'https://%s/%s/' % (AWS_STORAGE_BUCKET_NAME, AWS_LOCATION)
+STATIC_ROOT = STATIC_URL
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 DEFAULT_FILE_STORAGE = 'project.storages.MediaStore'
 
