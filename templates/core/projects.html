@@ -1,0 +1,28 @@
+{% extends 'core/core.html' %}
+{% load static %}
+
+{% block content-main %}
+<section class="ftco-section ftco-no-pt ftco-no-pb">
+    <div class="container px-md-0">
+        <div class="row d-flex no-gutters">            
+            {% for pro in projects %}
+                <div class="col-md-4 portfolio-wrap-2">
+                    <div class="row no-gutters align-items-center">
+                        <div href="#" class="img w-100 js-fullheight d-flex align-items-center" style="background-image: url({{pro.image.url}});">
+                            <div class="text p-4 p-md-5 ftco-animate">
+                                <div class="desc">
+                                    <div class="top">
+                                        <span class="subheading">Developer</span>
+                                        <h2 class="mb-4">{{pro.title}}</h2>
+                                        <p><a href="{{pro.url}}" class="custom-btn">View Portfolio</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}            
+        </div>
+    </div>
+</section>
+{% endblock content-main %}

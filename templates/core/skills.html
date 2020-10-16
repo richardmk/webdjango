@@ -1,0 +1,57 @@
+{% extends 'core/core.html' %}
+{% load static %}
+
+{% block content-main %}
+<section class="ftco-section ftco-no-pt ftco-no-pb skills" id="skills">
+	<div class="container px-md-0">
+		<div class="row d-flex no-gutters">
+			<div class="col-lg-12 pb-5 single ">				
+				<div class="px-5 mt-5">
+					<h1 class="mb-5 text-center">SKILLS</h1>
+					<div class="row skills-content">
+						<div class="col-lg-6">  							
+							{% for list in list1 %}
+								<div class="progress">
+									<span class="skill">{{list.description}} <i class="val">90%</i></span>
+									<div class="progress-bar-wrap">
+										<div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="10"></div>
+									</div>
+								</div>   
+							{% endfor %}							        
+						</div>                  
+						<div class="col-lg-6">   
+							{% for list in list2 %}               
+							<div class="progress">
+								<span class="skill">{{list.description}} <i class="val">80%</i></span>
+								<div class="progress-bar-wrap">
+									<div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="10"></div>
+								</div>
+							</div> 
+							{% endfor %}
+						</div>                  
+					</div>
+						<h1 class="mb-4 mt-3 text-center">Facts</h1>
+					<p class="text-center mb-5">These are some data from my experience in projects carried out and the subsequent advice on each one of them.</p>
+
+					<div class="row counters">
+						<div class="col-lg-4 col-6 text-center">
+							<span data-toggle="counter-up">5</span>
+							<p>Satisfied Clients</p>
+						</div>				  
+						<div class="col-lg-4 col-6 text-center">
+							<span data-toggle="counter-up">6</span>
+							<p>Finished Projects</p>
+						</div>				  
+						<div class="col-lg-4 col-6 text-center">
+							<span data-toggle="counter-up">1200</span>
+							<p>Aprox. Work Hours</p>
+						</div>			  
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+  </section><!-- End Skills Section -->
+{% endblock content-main %}
+	

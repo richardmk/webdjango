@@ -1,0 +1,40 @@
+{% extends 'core/core.html' %}
+{% load static %}
+
+{% block content-main %}
+ <!-- ======= Testimonials Section ======= -->
+ <section class="ftco-section ftco-no-pt ftco-no-pb testimonials" id="testimonials">
+	<div class="container px-md-0">
+		<div class="row d-flex no-gutters">
+			<div class="col-lg-12 pb-5 single ">
+				<div class="px-5 mt-5">
+					<h1 class="mb-4 text-center">TESTIMONIALS</h1>
+					<p class="mb-5 text-center">Trusted people, co-workers and direct bosses.</p>
+					<div class="owl-carousel testimonials-carousel">
+						
+						{% for tes in testimonials  %}
+						<div class="testimonial-item">
+							<img src="{{tes.image.url}}" class="testimonial-img" alt=""><br>
+							<h4>{{tes.title}}</h4>
+							<h4>{{tes.subtitle}}</h4>
+							<p>
+								<i class="bx bxs-quote-alt-left quote-icon-left"></i>
+								{{tes.description}} Telf: {{tes.phone}}
+								<i class="bx bxs-quote-alt-right quote-icon-right"></i>
+							</p>
+						</div>	
+						{% endfor %}
+							
+								  
+					</div>
+				</div>
+				
+					
+			</div>
+		</div>
+	</div>
+</section>
+
+
+  <!-- End Testimonials Section -->
+{% endblock content-main %}

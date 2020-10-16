@@ -1,0 +1,48 @@
+{% extends 'core/core.html' %}
+{% load static %}
+
+{% block content-main %}
+<section class="ftco-about img ftco-section ftco-no-pt ftco-no-pb" id="about-section">
+	<div class="container-fluid px-0">
+		{% for user in object_list %}
+		<div class="row d-flex">
+			<div class="col-md-6 d-flex">
+				<div class="img d-flex align-self-stretch align-items-center js-fullheight" style="background-image:url({{user.picture.url}});"></div>
+			</div>
+			<div class="col-md-6 d-flex align-items-center">
+				<div class="text px-4 pt-5 pt-md-0 px-md-4 pr-md-5 ftco-animate">
+					<!--<h2 class="mb-4">Hello! I'm<span>Jeffrey White</span> the CEO of a Mostudio Photography</h2>-->
+					<h3>Backend developer &amp; statistical</h3>
+					<p class="font-italic">						
+						I have 2 years of experience in web development using technologies such as PHP, Django and Django REST.
+					</p>
+					
+					<div class="row d-flex">
+						<div class="col-lg-6 d-flex">
+							
+							<ul>
+								<li><i></i> <strong>Birthday:</strong> {{user.date_birth}}</li>
+								<li><i></i> <strong>Age:</strong> {{user.age}}</li>
+								<li><i></i> <strong>Phone:</strong> +51 {{user.phone}}</li>								
+								<li><i></i> <strong>Email:</strong> {{user.email}}</li>
+							</ul>
+						</div>
+						<div class="col-lg-6 d-flex">
+							<ul>
+								<li><i></i> <strong>Address:</strong> {{user.address}}</li>								
+								<li><i></i> <strong>City:</strong> {{user.city}}, {{user.country}}</li>
+								<li><i></i> <strong>Degree:</strong> Bachiller</li>
+								<li><i></i> <strong>Freelance:</strong> Available</li>
+							</ul>
+						</div>
+					</div>
+					<p>{{user.description}}</p>
+					
+				</div>
+			</div>            
+		</div>
+		{% endfor %}
+	</div>
+</section>
+{% endblock content-main %}
+	
