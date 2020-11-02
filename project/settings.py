@@ -140,10 +140,6 @@ EMAIL_HOST_PASSWORD = "Georgeana10"
 
 STATIC_ROOT = '/static/'
 
-STATIC_URL = '/static/'
-
-STATICFILES_DIRS = ('static',)
-
 MEDIA_ROOT = '/media/'
 
 MEDIA_URL = '/media/'
