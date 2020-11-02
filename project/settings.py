@@ -25,7 +25,7 @@ SECRET_KEY = 'gjsqc3r9**-3iu6tmw1@%w*e==(h#^p!u55$qo=ufs%w9s2_$2'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['https://richardmejia.herokuapp.com/']
 
 
 # Application definition
@@ -142,7 +142,7 @@ STATIC_ROOT = '/static/'
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = ["static",]
+STATICFILES_DIRS = ('static',)
 
 MEDIA_ROOT = '/media/'
 
