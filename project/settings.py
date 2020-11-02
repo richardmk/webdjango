@@ -138,7 +138,11 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = "richard.mejia.k@gmail.com"
 EMAIL_HOST_PASSWORD = "Georgeana10" 
 
-STATIC_ROOT = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_URL = '/static/'
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
 
 MEDIA_ROOT = '/media/'
 
