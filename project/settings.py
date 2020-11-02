@@ -25,7 +25,7 @@ SECRET_KEY = 'gjsqc3r9**-3iu6tmw1@%w*e==(h#^p!u55$qo=ufs%w9s2_$2'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['richardmejia.herokuapp.com','localhost','127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -49,6 +49,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'project.urls'
@@ -78,18 +79,19 @@ WSGI_APPLICATION = 'project.wsgi.application'
 """
 DATABASES = {
     'default': {        
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'personalweb',
-        'USER': 'rmejia',
-        'PASSWORD': 'Georgeana05',
-        'HOST': 'database-1.cuv22zrmjj7m.sa-east-1.rds.amazonaws.com',
+        'USER': 'postgres',
+        'PASSWORD': '12345',
+        'HOST': 'localhost',
         'PORT': '5432',
     },
 }
 """
 import dj_database_url
 db_from_env = dj_database_url.config(conn_max_age=600)
-DATABASES['default'] = dj_database_url.config(cdb_from_env)
+DATABASES['default'] = dj_database_url.config(db_from_env)
+
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
@@ -132,6 +134,18 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = "richard.mejia.k@gmail.com"
 EMAIL_HOST_PASSWORD = "Georgeana10" 
 
+STATIC_ROOT = '/static/'
+
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = ["static",]
+
+MEDIA_ROOT = '/media/'
+
+MEDIA_URL = '/media/'
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+"""
 #S3 BUCKETS CONFIG
 AWS_ACCESS_KEY_ID = 'AKIARKASK7I664XURTE2'
 AWS_SECRET_ACCESS_KEY = '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'
@@ -145,3 +159,4 @@ STATIC_ROOT = STATIC_URL
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 DEFAULT_FILE_STORAGE = 'project.storages.MediaStore'
 
+"""
