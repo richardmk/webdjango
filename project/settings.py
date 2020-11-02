@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'apps.core',
-    'storages',
 ]
 
 MIDDLEWARE = [
@@ -89,8 +88,7 @@ DATABASES = {
 }
 """
 import dj_database_url
-db_from_env = dj_database_url.config(conn_max_age=600)
-DATABASES['default'] = dj_database_url.config(db_from_env)
+DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -145,18 +143,3 @@ MEDIA_ROOT = '/media/'
 MEDIA_URL = '/media/'
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-"""
-#S3 BUCKETS CONFIG
-AWS_ACCESS_KEY_ID = 'AKIARKASK7I664XURTE2'
-AWS_SECRET_ACCESS_KEY = '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'
-AWS_STORAGE_BUCKET_NAME = 'personalweb-bucket'
-AWS_S3_FILE_OVERWRITE = False
-AWS_DEFAULT_ACL = None
-AWS_LOCATION= 'static'
- 
-STATIC_URL = 'https://%s/%s/' % (AWS_STORAGE_BUCKET_NAME, AWS_LOCATION)
-STATIC_ROOT = STATIC_URL
-STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-DEFAULT_FILE_STORAGE = 'project.storages.MediaStore'
-
-"""
