@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'gjsqc3r9**-3iu6tmw1@%w*e==(h#^p!u55$qo=ufs%w9s2_$2'
 
 
-DEBUG = False
+DEBUG = True
 
 
 ALLOWED_HOSTS = ['richardmejia.herokuapp.com', '127.0.0.1']
@@ -129,12 +129,8 @@ EMAIL_HOST_USER = "richard.mejia.k@gmail.com"
 EMAIL_HOST_PASSWORD = "Georgeana10" 
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_DIRS = (os.path.join(BASE_DIR,'static'),)
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
