@@ -11,13 +11,27 @@
 					<div class="row skills-content">
 						                
 						<div class="col-lg-6">   
-							{% for list in list2 %}               
+							{% for list in skill %}     
+							{% if forloop.counter0|divisibleby:2 == True %}          
 							<div class="progress">
 								<span class="skill">{{list.description}} <i class="val">80%</i></span>
 								<div class="progress-bar-wrap">
 									<div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="10"></div>
 								</div>
 							</div> 
+							{% endif %}
+							{% endfor %}
+						</div> 
+						<div class="col-lg-6">   
+							{% for list in skill %}     
+							{% if forloop.counter0|divisibleby:2 == False %}          
+							<div class="progress">
+								<span class="skill">{{list.description}} <i class="val">80%</i></span>
+								<div class="progress-bar-wrap">
+									<div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="10"></div>
+								</div>
+							</div> 
+							{% endif %}
 							{% endfor %}
 						</div>                  
 					</div>

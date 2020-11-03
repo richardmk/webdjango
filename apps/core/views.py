@@ -40,11 +40,9 @@ def experience(request):
 
 
 def skill(request):
-    list1 = Skill.objects.filter(pk__lt=6)
-    list2 =  Skill.objects.filter(pk__gt=5)
+    skill = Skill.objects.all()
     context = {
-        'list1': list1,
-        'list2': list2,
+        'skill': skill,
     }
     return render(request, 'core/skills.html', context)
 
