@@ -27,7 +27,7 @@ SECRET_KEY = 'gjsqc3r9**-3iu6tmw1@%w*e==(h#^p!u55$qo=ufs%w9s2_$2'
 DEBUG = False
 
 
-ALLOWED_HOSTS = ['https://richardmejia.herokuapp.com']
+ALLOWED_HOSTS = ['richardmejia.herokuapp.com', '127.0.0.1']
 
 
 import dj_database_url
