@@ -3,7 +3,7 @@ from .base import *
 from decouple import config
 import dj_database_url
 
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['richardmejia.herokuapp.com', '127.0.0.1']
 
